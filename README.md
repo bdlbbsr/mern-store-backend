@@ -124,8 +124,6 @@ The server will run at http://localhost:8080 as per env file.
 
 8. **Middleware**
 
-### JWT Verification Middleware ###
-
-- **Middleware Function:** `authenticateUser`
+- **JWT Middleware Function:** `authenticateUser`
 - **Description:** Verifies the JWT token included in the Authorization header to applied in protected routes.
 
