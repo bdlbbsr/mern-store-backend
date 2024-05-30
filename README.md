@@ -1,4 +1,4 @@
-## User Registration JWT Auth
+## E-commerce web app backend in MVC structure
 
 The APIs(endpoints), built with Node.js, Express, and MongoDB, includes 
 user registration, 
