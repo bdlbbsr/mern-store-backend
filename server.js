@@ -25,8 +25,8 @@ app.use(compression());
 //   },
 // }));
 
-// app.use(cors());
-app.use(cors({ origin: 'https://mern-store-gray.vercel.app/' }));
+app.use(cors());
+//app.use(cors({ origin: 'https://mern-store-gray.vercel.app/' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
