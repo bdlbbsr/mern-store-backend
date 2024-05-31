@@ -1,4 +1,5 @@
 const express = require('express');
+const compression = require('compression');
 const cors = require('cors');
 const multer = require('multer');
 var path = require('path');
@@ -7,6 +8,7 @@ const routes = require('./routes');
 const connection = require('./config/dbConfig');
 // const helmet = require('helmet');
 const app = express();
+app.use(compression());
  
 
 
@@ -22,7 +24,9 @@ const app = express();
 //     // ... other directives
 //   },
 // }));
-app.use(cors());
+
+// app.use(cors());
+app.use(cors({ origin: 'https://mern-store-gray.vercel.app/' }));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
