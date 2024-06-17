@@ -105,9 +105,34 @@ exports.getProductsByCategoryName = async (req, res) => {
     query = query.find(queryabc);
   }
 
+  const page = parseInt(req.query.page) || 1; // Default to page 1 if not provided
+  const pageSize = parseInt(req.query.pageSize) || 10; // Default to 10 items per page if not provided
+  
+  // Calculate the number of documents to skip
+  const skip = (page - 1) * pageSize;
+
+
+
   try {
-    const products = await query.exec();
-    res.status(200).json({ success: true, data: products });
+    //const allProducts = await query.exec();
+
+    const allProducts = await query.find()
+    .sort({ _id: 1 })
+    .skip(skip)
+    .limit(pageSize)
+    .exec();
+
+// Optionally, get the total count of documents for pagination metadata
+const totalProducts = await Product.countDocuments();
+
+res.json({
+products: allProducts,
+currentPage: page,
+totalPages: Math.ceil(totalProducts / pageSize),
+totalProducts: totalProducts
+});
+
+    //res.status(200).json({ success: true, data: products });
   } catch (err) {
     res.status(400).json(err);
   }
