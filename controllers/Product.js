@@ -126,7 +126,7 @@ exports.getProductsByCategoryName = async (req, res) => {
 const totalProducts = await Product.countDocuments();
 
 res.json({
-products: allProducts,
+data: allProducts,
 currentPage: page,
 totalPages: Math.ceil(totalProducts / pageSize),
 totalProducts: totalProducts

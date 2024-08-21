@@ -9,7 +9,7 @@ const authenticateUser = (req, res, next) => {
 
   // Check if the token starts with 'Bearer '
   if (!token.startsWith('Bearer ')) {
-    return res.status(401).json({ message: 'Invalid token format' });
+    return res.status(401).json({ message: 'Please login first' });
   }
 
   // Remove 'Bearer ' prefix from the token
