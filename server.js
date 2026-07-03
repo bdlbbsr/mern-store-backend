@@ -12,8 +12,6 @@ const app = express();
 app.use(compression());
  
 
-
-
 // // Enable Content Security Policy
 // app.use(helmet.contentSecurityPolicy({
 //   directives: {
