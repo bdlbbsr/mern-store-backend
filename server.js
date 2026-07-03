@@ -25,7 +25,7 @@ app.use(compression());
 // }));
 
 const allowedOrigins = [
-  "http://localhost:5173",
+  "http://localhost:3000",
   "https://mern-store-gray.vercel.app",
 ];
 
